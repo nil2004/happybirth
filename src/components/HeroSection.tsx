@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, Music } from "lucide-react";
-import radhaKrishnaImage from "@/assets/radha-krishna-moonlit.jpg";
+// Radha Krishna image path - now in public folder
+const radhaKrishnaImage = "/assets/radha-krishna-moonlit.jpg";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);

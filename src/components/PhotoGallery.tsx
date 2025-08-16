@@ -1,5 +1,6 @@
 import { useState } from "react";
-import peacockFrame from "@/assets/peacock-feather-frame.png";
+// Peacock frame image path - now in public folder
+const peacockFrame = "/assets/peacock-feather-frame.png";
 
 // Sample photos - using local photos from the photos folder
 const samplePhotos = [

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
-import krishnaButterPot from "@/assets/krishna-butter-pot.jpg";
+// Krishna butter pot image path - now in public folder
+const krishnaButterPot = "/assets/krishna-butter-pot.jpg";
 
 export const KrishnaSurprise = () => {
   const [isRevealed, setIsRevealed] = useState(false);
