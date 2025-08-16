@@ -45,17 +45,6 @@ const samplePhotos = [
 
 export const PhotoGallery = () => {
   const [hoveredPhoto, setHoveredPhoto] = useState<number | null>(null);
-  const [imageErrors, setImageErrors] = useState<{[key: number]: boolean}>({});
-
-  const handleImageError = (photoId: number) => {
-    console.error(`Failed to load image for photo ${photoId}`);
-    setImageErrors(prev => ({ ...prev, [photoId]: true }));
-  };
-
-  const handleImageLoad = (photoId: number) => {
-    console.log(`Successfully loaded image for photo ${photoId}`);
-    setImageErrors(prev => ({ ...prev, [photoId]: false }));
-  };
 
   return (
     <section className="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-b from-background to-card">
@@ -72,19 +61,6 @@ export const PhotoGallery = () => {
             <span className="text-2xl">🪷</span>
             <div className="w-16 h-px bg-lotus-pink"></div>
           </div>
-        </div>
-
-        {/* Debug Info */}
-        <div className="mb-8 p-4 bg-yellow-100 border border-yellow-400 rounded-lg">
-          <h3 className="font-bold text-yellow-800 mb-2">Debug Info:</h3>
-          <p className="text-sm text-yellow-700">
-            Photos folder path: /photos/ | 
-            Peacock frame path: {peacockFrame} | 
-            Total photos: {samplePhotos.length}
-          </p>
-          <p className="text-sm text-yellow-700 mt-1">
-            Check browser console for image loading logs
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -111,19 +87,7 @@ export const PhotoGallery = () => {
                   src={photo.src}
                   alt={`Beautiful moment ${photo.id}`}
                   className="w-full h-64 sm:h-72 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
-                  onError={() => handleImageError(photo.id)}
-                  onLoad={() => handleImageLoad(photo.id)}
                 />
-                
-                {/* Error State */}
-                {imageErrors[photo.id] && (
-                  <div className="absolute inset-0 bg-red-100 flex items-center justify-center z-30">
-                    <div className="text-center text-red-600 p-4">
-                      <p className="font-bold">Image Failed to Load</p>
-                      <p className="text-sm mt-1">Path: {photo.src}</p>
-                    </div>
-                  </div>
-                )}
                 
                 {/* Hover Overlay */}
                 <div className={`absolute inset-0 bg-gradient-watercolor opacity-0 transition-opacity duration-500 ${
