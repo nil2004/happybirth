@@ -14,18 +14,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  publicDir: "public",
-  build: {
-    assetsDir: "assets",
-    rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.jpg') || assetInfo.name && assetInfo.name.endsWith('.jpeg') || assetInfo.name && assetInfo.name.endsWith('.png')) {
-            return 'assets/[name].[ext]';
-          }
-          return 'assets/[name]-[hash].[ext]';
-        },
-      },
-    },
-  },
 });
