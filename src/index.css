@@ -1,0 +1,317 @@
+@import '@fontsource/cinzel/400.css';
+@import '@fontsource/cinzel/600.css';
+@import '@fontsource/cinzel/700.css';
+@import '@fontsource/crimson-text/400.css';
+@import '@fontsource/crimson-text/400-italic.css';
+@import '@fontsource/crimson-text/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Krishna-themed design system with devotional colors and watercolor aesthetics
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - moonlit night theme */
+    --background: 229 45% 7%;
+    --foreground: 45 90% 85%;
+
+    --card: 229 30% 12%;
+    --card-foreground: 45 80% 90%;
+
+    --popover: 229 35% 10%;
+    --popover-foreground: 45 85% 88%;
+
+    /* Divine golden colors for Krishna elements */
+    --primary: 45 95% 68%;
+    --primary-foreground: 229 45% 7%;
+
+    /* Peacock teal for accents */
+    --secondary: 185 65% 35%;
+    --secondary-foreground: 45 90% 95%;
+
+    /* Muted colors for subtle elements */
+    --muted: 229 20% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    /* Lotus pink for special accents */
+    --accent: 340 65% 75%;
+    --accent-foreground: 229 45% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 229 25% 25%;
+    --input: 229 25% 15%;
+    --ring: 45 95% 68%;
+
+    --radius: 0.75rem;
+
+    /* Custom Krishna theme colors */
+    --divine-gold: 45 95% 68%;
+    --divine-gold-light: 48 100% 80%;
+    --moonlight: 220 40% 85%;
+    --river-blue: 210 70% 20%;
+    --peacock-teal: 185 65% 35%;
+    --peacock-blue: 200 80% 45%;
+    --lotus-pink: 340 65% 75%;
+    --lotus-white: 340 20% 95%;
+    --forest-green: 140 40% 25%;
+    
+    /* Gradients */
+    --gradient-divine: linear-gradient(135deg, hsl(var(--divine-gold)), hsl(var(--divine-gold-light)));
+    --gradient-moonlit: linear-gradient(180deg, hsl(229 45% 7%), hsl(220 40% 15%));
+    --gradient-watercolor: linear-gradient(45deg, hsl(var(--peacock-teal)), hsl(var(--lotus-pink)));
+    --gradient-river: linear-gradient(90deg, hsl(var(--river-blue)), hsl(var(--peacock-blue)));
+
+    /* Shadows */
+    --shadow-divine: 0 20px 60px -10px hsl(var(--divine-gold) / 0.3);
+    --shadow-soft: 0 10px 30px -5px hsl(229 45% 7% / 0.5);
+    --shadow-glow: 0 0 30px hsl(var(--divine-gold) / 0.4);
+
+    /* Animations */
+    --transition-divine: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.4s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes for the Krishna theme */
+@layer utilities {
+  .bg-gradient-moonlit {
+    background: var(--gradient-moonlit);
+  }
+  
+  .bg-gradient-watercolor {
+    background: var(--gradient-watercolor);
+  }
+  
+  .bg-gradient-divine {
+    background: var(--gradient-divine);
+  }
+  
+  .bg-lotus-pink {
+    background-color: hsl(var(--lotus-pink));
+  }
+  
+  .text-lotus-pink {
+    color: hsl(var(--lotus-pink));
+  }
+  
+  .text-lotus-white {
+    color: hsl(var(--lotus-white));
+  }
+  
+  .text-peacock-teal {
+    color: hsl(var(--peacock-teal));
+  }
+  
+  .text-peacock-blue {
+    color: hsl(var(--peacock-blue));
+  }
+  
+  .text-forest-green {
+    color: hsl(var(--forest-green));
+  }
+  
+  .shadow-divine {
+    box-shadow: var(--shadow-divine);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-divine {
+    transition: var(--transition-divine);
+  }
+  
+  .transition-gentle {
+    transition: var(--transition-gentle);
+  }
+  
+  .animate-fade-in-slow {
+    animation: fade-in 2s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+  
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-lotus-dance {
+    animation: lotus-dance 8s linear infinite;
+  }
+  
+  .animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}
+
+/* Additional keyframes for missing animations */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Ensure all custom colors are available as utility classes */
+@layer utilities {
+  .bg-divine-gold {
+    background-color: hsl(var(--divine-gold));
+  }
+  
+  .bg-divine-gold-light {
+    background-color: hsl(var(--divine-gold-light));
+  }
+  
+  .bg-moonlight {
+    background-color: hsl(var(--moonlight));
+  }
+  
+  .bg-river-blue {
+    background-color: hsl(var(--river-blue));
+  }
+  
+  .bg-peacock-teal {
+    background-color: hsl(var(--peacock-teal));
+  }
+  
+  .bg-peacock-blue {
+    background-color: hsl(var(--peacock-blue));
+  }
+  
+  .bg-lotus-pink {
+    background-color: hsl(var(--lotus-pink));
+  }
+  
+  .bg-lotus-white {
+    background-color: hsl(var(--lotus-white));
+  }
+  
+  .bg-forest-green {
+    background-color: hsl(var(--forest-green));
+  }
+  
+  .text-divine-gold {
+    color: hsl(var(--divine-gold));
+  }
+  
+  .text-divine-gold-light {
+    color: hsl(var(--divine-gold-light));
+  }
+  
+  .text-moonlight {
+    color: hsl(var(--moonlight));
+  }
+  
+  .text-river-blue {
+    color: hsl(var(--river-blue));
+  }
+  
+  .text-peacock-teal {
+    color: hsl(var(--peacock-teal));
+  }
+  
+  .text-peacock-blue {
+    color: hsl(var(--peacock-blue));
+  }
+  
+  .text-lotus-pink {
+    color: hsl(var(--lotus-pink));
+  }
+  
+  .text-lotus-white {
+    color: hsl(var(--lotus-white));
+  }
+  
+  .text-forest-green {
+    color: hsl(var(--forest-green));
+  }
+  
+  .border-divine-gold {
+    border-color: hsl(var(--divine-gold));
+  }
+  
+  .border-lotus-pink {
+    border-color: hsl(var(--lotus-pink));
+  }
+}
